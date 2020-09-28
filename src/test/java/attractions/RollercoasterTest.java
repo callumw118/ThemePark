@@ -2,16 +2,20 @@ package attractions;
 
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class RollercoasterTest {
 
     RollerCoaster rollerCoaster;
+    private Visitor visitor;
 
     @Before
     public void setUp() {
         rollerCoaster = new RollerCoaster("Blue Ridge", 10);
+        visitor = new Visitor(24, 185, 50);
     }
 
     @Test
@@ -27,5 +31,10 @@ public class RollercoasterTest {
     @Test
     public void hasVisitCount() {
         assertEquals(0, rollerCoaster.getVisitCount());
+    }
+
+    @Test
+    public void canRideRollercoaster(){
+        assertTrue(rollerCoaster.isAllowedVisitor(visitor));
     }
 }
