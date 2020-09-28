@@ -1,6 +1,7 @@
 package people;
 
 import attractions.Attraction;
+import behaviours.IReviewed;
 
 import java.util.ArrayList;
 
@@ -10,12 +11,14 @@ public class Visitor {
     private double height;
     private double money;
     private ArrayList<Attraction> visitedAttractions;
+    private ArrayList<IReviewed> whatVisitorCanVisit;
 
     public Visitor(int age, double height, double money) {
         this.age = age;
         this.height = height;
         this.money = money;
         this.visitedAttractions = new ArrayList<>();
+        this.whatVisitorCanVisit = new ArrayList<>();
     }
 
     public int getAge() {

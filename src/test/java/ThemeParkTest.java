@@ -25,4 +25,15 @@ public class ThemeParkTest {
         assertEquals(1, attraction.getVisitCount());
         assertEquals(attraction, visitor.getVisitedAttractions().get(0));
     }
+
+    @Test
+    public void canAddReview(){
+        themePark.addReview(attraction);
+        assertEquals(1, themePark.getAllReviews().size());
+    }
+
+    @Test
+    public void canGetEverythingTheVisitorCanVisit(){
+        themePark.getAllowedFor(visitor);
+    }
 }
